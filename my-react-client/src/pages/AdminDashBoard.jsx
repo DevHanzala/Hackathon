@@ -20,7 +20,7 @@ const AdminDashboard = () => {
   useEffect(() => {
     const fetchBeneficiaries = async () => {
       try {
-        const response = await axios.get('http://localhost:3000/api/admin/');
+        const response = await axios.get('https://hackathon-chi-ruddy.vercel.app/api/admin/');
         setBeneficiaries(response.data.data);
         setFilteredBeneficiaries(response.data.data); // Initially, show all beneficiaries
         setLoading(false);

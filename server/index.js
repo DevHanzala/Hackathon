@@ -8,14 +8,13 @@ import cors from "cors";
 import connectDB from './DB/connectDB.js';
 
 dotenv.config();
-const PORT = process.env.PORT || 3000;
 
 const app = express();
 app.use(express.json());
 
 // CORS Configuration
 const corsOptions = {
-    origin: "http://localhost:5173", // No trailing slash
+    origin: "https://hackathon-vox5.vercel.app/", // No trailing slash
     credentials: true // Allows cookies to be sent with the request
 };
 app.use(cors(corsOptions)); // Apply CORS middleware globally
@@ -26,7 +25,6 @@ app.use('/api/receptionist', receptionistRoutes);
 app.use('/api/department-staff', departmentStaffRoutes);
 app.use('/api/beneficiary', beneficiaryRoutes);
 
-app.listen(PORT, () => {
+app.listen( () => {
     connectDB();
-    console.log(`Server listening at port ${PORT}`);
 });

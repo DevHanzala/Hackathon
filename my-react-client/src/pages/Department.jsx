@@ -34,7 +34,7 @@ const Department = () => {
   const handleStatusUpdate = async () => {
     try {
       // Send a POST request to update the token status
-      await axios.post('http://localhost:3000/api/department-staff/update-status', {
+      await axios.post('https://hackathon-chi-ruddy.vercel.app/api/department-staff/update-status', {
         tokenId: tokenId,
         status: status,
         remarks: remarks,
